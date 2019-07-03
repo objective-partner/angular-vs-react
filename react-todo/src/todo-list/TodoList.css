@@ -1,0 +1,22 @@
+.todo-input{
+    border: none;
+    background-color: rgb(190, 190, 190);
+    line-height: 24px;
+    margin: 24px 12px;
+    outline-color: gray;
+    padding: 4px;
+  }
+
+  .add-button{
+    margin: 24px 12px;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(139, 139, 139);
+    border: none;
+  }
+
+  .inputs-wrapper{
+      display: flex;
+      justify-content: center;
+  }

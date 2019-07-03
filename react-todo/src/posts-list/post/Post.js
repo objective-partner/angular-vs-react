@@ -4,9 +4,9 @@ import './Post.css';
 function Post(props) {
   const { title, score } = props.post;
   return (
-    <div>
-      <span>{title}</span>
-      <span>{score}</span>
+    <div className="post-wrapper">
+      <span className="post-title">{title}</span>
+      <span className="post-score">{'Score: ' + score}</span>
     </div>
   );
 }

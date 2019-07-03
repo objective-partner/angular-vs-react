@@ -1,0 +1,14 @@
+.post-wrapper{
+    width: fit-content;
+  }
+
+  .post-title{
+    display: inline-block;
+    margin-top: 4px;
+    border: 1px solid gray;
+    padding: 2px;
+  }
+
+  .post-score{
+    margin-left: 24px;
+  }

@@ -5,7 +5,7 @@ import PostsList from './posts-list/PostsList';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <TodoList />
       <PostsList />
     </div>

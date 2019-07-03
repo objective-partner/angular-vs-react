@@ -15,10 +15,16 @@ class TodoList extends Component {
     return (
       <div>
         <TodoEntries entries={this.state.entries} />
-        <input value={this.state.inputValue} onChange={this.updateInputValue} />
-        <button onClick={this.addNewTodo} className="add-button">
-          Add
-        </button>
+        <div className="inputs-wrapper">
+          <input
+            className="todo-input"
+            value={this.state.inputValue}
+            onChange={this.updateInputValue}
+          />
+          <button onClick={this.addNewTodo} className="add-button">
+            Add
+          </button>
+        </div>
       </div>
     );
   }

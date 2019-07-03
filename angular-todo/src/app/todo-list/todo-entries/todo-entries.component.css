@@ -1,0 +1,17 @@
+.todos-entries{
+  min-height: 200px;
+  background-color: rgb(190, 190, 190);
+  padding-bottom: 12px;
+}
+
+.todos-entries h2{
+  padding: 12px 0;
+  margin: 0 12px;
+}
+
+.todos-entries p{
+  margin: 2px;
+  padding: 12px 24px;
+  background-color: rgb(175, 175, 175);
+}
+

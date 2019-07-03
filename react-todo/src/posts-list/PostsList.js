@@ -10,8 +10,8 @@ function PostsList() {
   }, []);
   const postComps = posts.map((post, idx) => <Post key={idx} post={post} />);
   return (
-    <div>
-      <p>Top 10 Angular's Reddit Posts</p>
+    <div className="posts-wrapper">
+      <h3>Top 10 Angular's Reddit Posts</h3>
       {postComps}
     </div>
   );

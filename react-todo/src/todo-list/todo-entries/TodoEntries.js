@@ -7,7 +7,7 @@ function TodoEntries(props) {
   const list = entries.map(entry => <p>{entry}</p>);
   return (
     <div className="todos-entries">
-      <p className="todo-entries-title">For today</p>
+      <h2 className="todo-entries-title">TODO for today</h2>
       {list}
     </div>
   );

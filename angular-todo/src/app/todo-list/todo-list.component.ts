@@ -8,9 +8,15 @@ import { TodosService } from './todos-service/todos.service';
 })
 export class TodoListComponent implements OnInit {
   @ViewChild('newTodoInput', { static: true }) newTodoInput: ElementRef;
+  entries: string[] = [];
+
   constructor(private todosService: TodosService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.todosService.getEntries().subscribe(entriesFromService => {
+      this.entries = entriesFromService;
+    });
+  }
 
   addNewTodo() {
     const newEntry = this.newTodoInput.nativeElement.value;

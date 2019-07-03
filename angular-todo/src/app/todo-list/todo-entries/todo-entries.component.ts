@@ -1,19 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { TodosService } from '../todos-service/todos.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-entries',
   templateUrl: './todo-entries.component.html',
   styleUrls: ['./todo-entries.component.css']
 })
-export class TodoEntriesComponent implements OnInit {
+export class TodoEntriesComponent {
+  @Input()
   entries: string[] = [];
-
-  constructor(private todosService: TodosService) {}
-
-  ngOnInit() {
-    this.todosService.getEntries().subscribe(entriesFromService => {
-      this.entries = entriesFromService;
-    });
-  }
 }

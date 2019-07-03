@@ -1,1 +1,4 @@
-<div class="todos-entries">TODO entries</div>
+<div className="todos-entries">
+  <p className="todo-entries-title">For today</p>
+  <p *ngFor="let entry of entries">{{ entry }}</p>
+</div>

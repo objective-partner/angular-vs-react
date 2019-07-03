@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { TodosService } from './todos-service/todos.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
+  @ViewChild('newTodoInput', { static: true }) newTodoInput: ElementRef;
+  constructor(private todosService: TodosService) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  addNewTodo() {
+    const newEntry = this.newTodoInput.nativeElement.value;
+    this.todosService.addEntry(newEntry);
+    this.newTodoInput.nativeElement.value = '';
   }
-
 }

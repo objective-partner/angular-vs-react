@@ -9,9 +9,14 @@ export class TodosService {
   entries$: BehaviorSubject<string[]>;
   constructor() {
     this.entries$ = new BehaviorSubject(this.entries);
-   }
+  }
 
-  public getEntries():Observable<string[]>{
+  public getEntries(): Observable<string[]> {
     return this.entries$.asObservable();
+  }
+
+  public addEntry(entry: string) {
+    this.entries.push(entry);
+    this.entries$.next(this.entries);
   }
 }

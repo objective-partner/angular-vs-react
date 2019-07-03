@@ -1,4 +1,6 @@
 <div>
   <app-todo-entries></app-todo-entries>
-  <input /><button class="add-button">Add</button>
+  <input #newTodoInput /><button (click)="addNewTodo()" class="add-button">
+    Add
+  </button>
 </div>

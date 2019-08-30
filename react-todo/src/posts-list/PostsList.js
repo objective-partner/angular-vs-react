@@ -3,27 +3,32 @@ import './PostsList.css';
 import Post from './post/Post';
 import axios from 'axios';
 
-function PostsList() {
+function PostsList(props) {
+  const { title, url } = props;
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetchData(setPosts);
-  }, []);
+    fetchData(url, setPosts);
+  }, [url]);
   const postComps = posts.map((post, idx) => <Post key={idx} post={post} />);
   return (
     <div className="posts-wrapper">
-      <h3>Top 10 Angular's Reddit Posts</h3>
+      <h3>{title}</h3>
       {postComps}
     </div>
   );
 }
 
-function fetchData(setPosts) {
+function fetchData(url, setPosts) {
   axios
-    .get('https://www.reddit.com/r/Angular2/top.json?sort=new&limit=10')
+    .get(url)
     .then(postsData => {
       const extractedData = postsData.data.data.children;
       const extractedPosts = extractedData.map(postData => {
-        return { title: postData.data.title, score: postData.data.score };
+        return {
+          title: postData.data.title,
+          score: postData.data.score,
+          url: postData.data.url
+        };
       });
       setPosts(extractedPosts);
     })

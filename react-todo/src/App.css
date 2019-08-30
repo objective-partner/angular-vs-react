@@ -1,0 +1,8 @@
+.posts-lists-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.app > h1{
+    text-align: center;
+}

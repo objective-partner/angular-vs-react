@@ -5,10 +5,15 @@
   .post-title{
     display: inline-block;
     margin-top: 4px;
+    max-width: 40vw;
     border: 1px solid gray;
     padding: 2px;
   }
 
   .post-score{
+    margin-left: 24px;
+  }
+
+  .post-link{
     margin-left: 24px;
   }
